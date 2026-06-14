@@ -2,7 +2,7 @@
 Replication materials for Aging &amp; Mental Health
 This repository contains code and supporting files for reproducing the analyses reported in:
 
-[Full citation]
+Zhang, J. (2026). Do ecosystem improvements enhance the cognitive function of older adults: Quasi-experimental evidence from china. Aging and Mental Health. https://doi.org/10.1080/13607863.2026.2689586
 
 ## Files
 
