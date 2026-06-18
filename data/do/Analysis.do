@@ -396,22 +396,22 @@ mat drop _all
 gl sex age i.educl i.marital hhsize i.urban dADL i.selfhealth chronic i.smokedrink i.carbon lnpop i.xtpcconsume
 csdid cognition $sex if sex == 0, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Female
 mat sex1 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
-csdid cognition $sex if sex == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Male; Good
+csdid cognition $sex if sex == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Male
 mat sex2 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
 csdid episodic $sex if sex == 0, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Female
 mat sex3 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
-csdid episodic $sex episodic2011 if sex == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Male; good
+csdid episodic $sex episodic2011 if sex == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Male
 mat sex4 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
 
 **## urban
 gl urban age i.sex i.educl i.marital hhsize dADL i.selfhealth chronic i.smokedrink i.carbon lnpop i.xtpcconsume
-csdid cognition $urban cognition2011 if urban == 0, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Rural; good
+csdid cognition $urban cognition2011 if urban == 0, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Rural
 mat urban1 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
-csdid cognition $urban if urban == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Urban; good
+csdid cognition $urban if urban == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Urban
 mat urban2 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
 csdid episodic $urban if urban == 0, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Rural
 mat urban3 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
-csdid episodic $urban if urban == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Urban; good
+csdid episodic $urban if urban == 1, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // Urban
 mat urban4 = (r(table)[1,"Post_avg"] \ r(table)[5,"Post_avg"] \ r(table)[6,"Post_avg"])
 
 * economic capital
@@ -574,13 +574,13 @@ coefplot mat(b_cog), ci(CI_cog) mc(black) lc(black) bylabel(Cognitive function) 
 **## Alternative outcomes
 set cformat %9.3f
 * cognition
-csdid dcognition $C, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 //good
-csdid fluid $C, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 // good
+csdid dcognition $C, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2
+csdid fluid $C, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 
 
 
 * air quality
 csdid cleancookfuel $C cleancookfuel2011 cleancookfuel2013, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2 
-display %12.11f r(table)[4, 3] // good
+display %12.11f r(table)[4, 3]
 
 * social cohesion
 csdid socialact $C, i(id) t(t) gvar(first_treat) cl(city) agg(event) long2
